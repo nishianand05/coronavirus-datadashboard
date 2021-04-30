@@ -275,6 +275,9 @@ nav .navLinks a {
       border-top: 1px solid burlywood;
       border-bottom: 1px solid burlywood;
     }
+	#dateDiv input {
+		margin: 0 auto;
+	}
   }
 
 /* -------------------- last updated ------------------- */
