@@ -11,8 +11,10 @@ scatPolt(dateInput);
 
 // Load button
 $("#refresh").click(function(){
+  $("#refresh").text("Loading...")
   dateInput = $("#dateInput").val();
   scatPolt(dateInput)
+
 });
 
 // ----------------------------------------- Scat function ----------------------------------------- 
@@ -88,7 +90,7 @@ function scatPolt(dateInput){
       // Refresh button
       d3.select('#refresh')
       .on('click', function(){
-          drawScat(coroArr, attribute);
+          drawScat(coroArr, dateInput);
       });
       
     drawScat(coroArr, dateInput);
@@ -162,6 +164,10 @@ function scatPolt(dateInput){
           .transition()
           .duration(500)
           .delay((d, i) => i * 5)
+			.on('end', function(d,i,nodes){
+			  if(i === nodes.length - 1){
+				  $("#refresh").text("Refresh")	  
+			  }})
             .attr('cx', d => xScale(d.cases))
             .attr('cy', d => yScale(d.deaths))
             .attr('fill', d => fScale((d.deaths/d.cases)*100))
@@ -190,7 +196,9 @@ function scatPolt(dateInput){
       d3.select('.tooltip')
           .style('opacity', 0);
     }
+	  
   });
+	
 }
 
 // ----------------------------------------- Format country data ----------------------------------------- 

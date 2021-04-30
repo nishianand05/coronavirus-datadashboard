@@ -11,6 +11,7 @@ barChart(dateInput, attribute);
 
 // Load button
 $("#refresh").click(function(){
+	$("#refresh").text("Loading...")
     // Get date and attribute and create map
     dateInput = $("#dateInput").val();
     var radio = document.querySelectorAll(".radio");
@@ -146,7 +147,8 @@ function barChart(dateInput, attribute){
         
             var t = d3.transition()
                         .duration(800)
-                        .ease(d3.easeBounceOut);
+                        .ease(d3.easeBounceOut)
+						
             
             var update = svg
                         .selectAll('rect')
@@ -155,7 +157,7 @@ function barChart(dateInput, attribute){
             update
                 .exit()
                 .transition(t)
-                    .delay((d, i, nodes) => (nodes.length -i - 1) * 800)
+                    .delay((d, i, nodes) => (nodes.length -i - 1) * 50)
                     .attr('y', height - padding)
                     .attr('height', 0)
                     .remove();
@@ -175,9 +177,14 @@ function barChart(dateInput, attribute){
                     .attr('width', xScale.bandwidth())
                     .transition(t)
                     .delay((d, i) => i * 50)
+			        	.on('end', function(d,i,nodes){
+				         if(i === nodes.length - 1){
+						  $("#refresh").text("Refresh")	  
+						}})
                         .attr('fill', fillVal)
                         .attr('y', d => yScale(d[attribute]))
                         .attr('height', d => yScale(0) - yScale(d[attribute]))
+						
 
 
                 $("#refresh").on('click', function(){
@@ -210,6 +217,8 @@ function barChart(dateInput, attribute){
             d3.select('.tooltip')
                 .style('opacity', 0);
         }
+		
+		// $("#refresh").text("Refresh")
 
     });
 }

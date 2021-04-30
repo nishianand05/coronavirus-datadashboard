@@ -11,6 +11,7 @@ piechart(dateInput, attribute);
 
 // Load button
 $("#refresh").click(function(){
+	$("#refresh").text("Loading...")
     // Get date and attribute and create pie chart
     dateInput = $("#dateInput").val();
     var radio = document.querySelectorAll(".radio");
@@ -246,6 +247,8 @@ function piechart(dateInput, attribute){
             }
         
         }
+		
+		$("#refresh").text("Refresh")	
 
     });
 }

@@ -11,6 +11,7 @@ map(dateInput, attribute);
 
 // Load button
 $("#refresh").click(function(){
+	$("#refresh").text("Loading...")	
     // Get date and attribute and create map
     dateInput = $("#dateInput").val();
     var radio = document.querySelectorAll(".radio");
@@ -131,11 +132,16 @@ function map(dateInput, attribute){
             d3.selectAll('.country')
                 .transition()
                 .duration(750)
+				.on('end', function(d,i,nodes){
+							if(i === nodes.length - 1){
+						  $("#refresh").text("Refresh")	  
+						}})
                 .ease(d3.easeBackIn)
                 .attr('fill', d => {
                     var data = d.properties[attribute];
                     return data ? scale(data) : '#ccc';
                 })
+
                 // .on('mousemove', showTooltip)
                 // .on('touchstart', showTooltip)
                 // .on('mouseout', hideTooltip)
