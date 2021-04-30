@@ -53,7 +53,7 @@ body {
   border: none;
   position: absolute;
   background-color: #141a1d;
-  color: #da164a;
+  color: #85182a;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -64,9 +64,10 @@ body {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%) rotate(270deg);
-	  color: #38b000;
+	  color: #538d22;
   }
 }
 

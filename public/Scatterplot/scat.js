@@ -110,7 +110,7 @@ function scatPolt(dateInput){
                      .range([height - padding, padding]);
 
       var fScale = d3.scaleLinear()
-                     .domain(d3.extent(data, d => (d.deaths/d.cases)*100))
+                     .domain(d3.extent(data, d => ((d.deaths/d.cases)*100)))
                      .range(['darkgreen', 'darkred'])
 
 
@@ -180,7 +180,9 @@ function scatPolt(dateInput){
              <p>Date: ${d.date}</p>
              <p>Cases: ${d.cases.toLocaleString()}</p>
              <p>Recovered: ${d.recovered.toLocaleString()}</p>
-             <p>Deaths: ${d.deaths.toLocaleString()}</p>
+             <p>Deaths: ${d.deaths.toLocaleString()}</p>             
+             <p>Case Fatality Rate: ${((d.deaths/d.cases)*100).toFixed(2)}%</p>
+
           `)
     }
 
