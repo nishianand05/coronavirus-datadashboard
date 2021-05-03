@@ -33,7 +33,7 @@ function piechart(dateInput, attribute){
     .defer(d3.json, 'https://api.covid19tracking.narrativa.com/api/' + dateInput)
     .awaitAll(function(error, data) {
 
-        console.log(error, data)
+        // console.log(error, data)
 
         // Display alert message if error or no data
         
@@ -119,11 +119,18 @@ function piechart(dateInput, attribute){
             .classed('totAttr', true)
                 
         var newAt;
-        attribute == 'cases'? newAt = 'newCases' : ( attribute == 'deaths' ? newAt = 'newDeaths' : newAt = 'newRecovered');
+        // attribute == 'cases'? newAt = 'newCases' : ( attribute == 'deaths' ? newAt = 'newDeaths' : newAt = 'newRecovered');
+		
+		newAt = {
+			cases:'newCases',
+			deaths:'newDeaths',
+			recovered:'newRecovered',
+			activeCases: 'newActiveCases'
+		}
         
         tot
         .append('text')
-            .text(`${(parseInt(totData[newAt])<0?"-":"+") + totData[newAt].toLocaleString()}`)
+            .text(`${(parseInt(totData[newAt[attribute]])<0?"-":"+") + totData[newAt[attribute]].toLocaleString()}`)
             .attr('text-anchor', 'middle')
             .attr('dy', '45px')
             .style('font-size', '0.8em')
@@ -204,11 +211,19 @@ function piechart(dateInput, attribute){
                     .text(`${totData[attribute].toLocaleString()}`)
                         
                 var newAt;
-                attribute == 'cases'? newAt = 'newCases' : ( attribute == 'deaths' ? newAt = 'newDeaths' : newAt = 'newRecovered');
-                // console.log(newAt)
-        
+                // attribute == 'cases'? newAt = 'newCases' : ( attribute == 'deaths' ? newAt = 'newDeaths' : newAt = 'newRecovered');
+                // // console.log(newAt)
+				
+				newAt = {
+					cases:'newCases',
+					deaths:'newDeaths',
+					recovered:'newRecovered',
+					activeCases: 'newActiveCases'
+				}
+
+
                 d3.select('.totNewAttr')
-                    .text(`${(parseInt(totData[newAt])<0?"-":"+") + totData[newAt].toLocaleString()}`)
+                    .text(`${(parseInt(totData[newAt[attribute]])<0?"-":"+") + totData[newAt[attribute]].toLocaleString()}`)
             
             });
         
@@ -226,7 +241,8 @@ function piechart(dateInput, attribute){
                     Ttext =  `
                     <p>Name: ${d.data.name}</p>
                     <p>Date: ${d.data.date}</p>
-                    <p>Cases: ${d.data.cases.toLocaleString()}</p>
+                    <p>Cases: ${d.data.cases.toLocaleString()}</p>                    
+					<p>Active Cases: ${d.data.activeCases.toLocaleString()}</p>
                     <p>Recovered: ${d.data.recovered.toLocaleString()}</p>
                     <p>Deaths: ${d.data.deaths.toLocaleString()}</p>
                     `     
@@ -266,6 +282,7 @@ function formatAllData(data, dateInput) {
         ct[i] = {
             name: c[i],
             date: countries[c[i]]['date'],
+			activeCases: (countries[c[i]]['today_confirmed']-(countries[c[i]]['today_recovered']+countries[c[i]]['today_deaths'])),
             cases: countries[c[i]]['today_confirmed'],
             recovered: countries[c[i]]['today_recovered'],
             deaths: countries[c[i]]['today_deaths']
@@ -287,6 +304,8 @@ function totalData(data){
         'newDeaths': tt['today_new_deaths'],
         'recovered': tt['today_recovered'],
         'newRecovered': tt['today_new_recovered'],
+		'activeCases': (tt['today_confirmed']-(tt['today_deaths']+tt['today_recovered'])),
+		'newActiveCases':(tt['today_new_confirmed']-(tt['today_new_deaths']+tt['today_new_recovered'])),
         'lastUpdated': data[0]['updated_at'] 
     }
     return t;

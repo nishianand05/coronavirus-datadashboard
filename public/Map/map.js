@@ -142,6 +142,9 @@ function map(dateInput, attribute){
                 .ease(d3.easeBackIn)
                 .attr('fill', d => {
                     var data = d.properties[attribute];
+					if(data == 0){
+						return '#73a942';
+					}
                     return data ? scale(data) : '#ccc';
                 })
 

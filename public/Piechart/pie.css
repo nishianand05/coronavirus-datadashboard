@@ -26,7 +26,7 @@
   margin: 5px;
   padding: 25px;
   text-align: center;
-  width: 300px;
+  width: 70%;
   border-bottom: 1px solid #ccc;
 }
 
@@ -44,7 +44,7 @@
   padding: 25px;
   border-bottom: 1px solid #ccc;
   text-align: center;
-  width: 300px;
+  width: 70%;
 }
 
 #AttrDiv form label {
@@ -92,5 +92,24 @@ svg{
   max-height: 100%;
   margin: 0 auto;
   display: block;
+}
+
+@media(max-width: 600px){
+		#AttrDiv form {
+		display: flex;
+		/* flex-direction: column; */
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+}
+
+@media(max-width: 395px){
+	#AttrDiv form {
+		flex-wrap: wrap;
+	}
+	#AttrDiv form input {
+		margin: 15px;
+	}
 }
 
