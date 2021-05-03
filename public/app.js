@@ -41,9 +41,13 @@ $("#crossbtn").click(function(){
 
 // Find yesterday date and set as default
 var date = new Date();
-var yesterday = date - 1000 * 60 * 60 * 24 * 1;
-yesterday = new Date(yesterday).toJSON().slice(0,10);
-$("#dateInput").val(yesterday);
+// var yesterday = date - 1000 * 60 * 60 * 24 * 1;
+var today = date
+// yesterday = new Date(yesterday).toJSON().slice(0,10);
+today = new Date(today).toJSON().slice(0,10);
+// $("#dateInput").val(yesterday);
+$("#dateInput").val(today);
+
 
 
 // ----------------------------------------- Alert message function ----------------------------------------- 

@@ -116,9 +116,10 @@ function map(dateInput, attribute){
             
             // Color range
             var  colorRanges = {
+				deaths: ["#400000", "#d03711"],
                 cases: ['#591d00','#f7b401'],
-                deaths: ['#801a00', '#ff3300'],
-                recovered: ['#058c42', '#004b23'],
+                activeCases: ['#641220', '#d65a24'],
+                recovered: ['#73a942', '#004b23'],
             };
             
             
@@ -164,7 +165,8 @@ function map(dateInput, attribute){
                 Ttext = `
                 <p>Name: ${d.properties.name}</p>
                 <p>Date: ${d.properties.date}</p>
-                <p>Cases: ${d.properties.cases.toLocaleString()}</p>
+				<p>Cases: ${d.properties.cases.toLocaleString()}</p>
+				<p>Active Cases: ${d.properties.activeCases.toLocaleString()}</p> 
                 <p>Recovered: ${d.properties.recovered.toLocaleString()}</p>
                 <p>Deaths: ${d.properties.deaths.toLocaleString()}</p>
                 `            
@@ -454,6 +456,7 @@ function formatAllData(data, dateInput) {
             name: c[i],
             id: countrycode[countries[c[i]]['id']],
             date: countries[c[i]]['date'],
+			activeCases: (countries[c[i]]['today_confirmed']-(countries[c[i]]['today_recovered']+countries[c[i]]['today_deaths'])),
             cases: countries[c[i]]['today_confirmed'],
             recovered: countries[c[i]]['today_recovered'],
             deaths: countries[c[i]]['today_deaths']
