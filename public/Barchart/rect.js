@@ -162,8 +162,16 @@ function barChart(dateInput, attribute){
                     .attr('height', 0)
                     .remove();
 
-            var fillVal = attribute == 'cases' ? '#e76f51' : ((attribute == 'deaths') ? '#9d0208' : '#2a9d8f'); 
-            update
+            // var fillVal = attribute == 'cases' ? '#e76f51' : ((attribute == 'deaths') ? '#9d0208' : '#2a9d8f'); 
+            
+			var fillVal = {
+				activeCases: '#eb6600',
+				cases: '#ba9d0b',
+				deaths: '#ba0000',
+				recovered: '#52b69a'
+			}
+			
+			update
                 .enter()
                 .append('rect')
                     .attr('y', height-padding)
@@ -181,9 +189,15 @@ function barChart(dateInput, attribute){
 				         if(i === nodes.length - 1){
 						  $("#refresh").text("Refresh")	  
 						}})
-                        .attr('fill', fillVal)
+                        .attr('fill', fillVal[attribute])
                         .attr('y', d => yScale(d[attribute]))
-                        .attr('height', d => yScale(0) - yScale(d[attribute]))
+                        .attr('height', function(d) {
+										var val = yScale(0) - yScale(d[attribute]); 
+										if(val < 0){
+											val = 0;
+										}
+									return val;
+								})
 						
 
 
@@ -200,7 +214,8 @@ function barChart(dateInput, attribute){
             Ttext = `
             <p>Name: ${d.name}</p>
             <p>Date: ${d.date}</p>
-            <p>Cases: ${d.cases.toLocaleString()}</p>
+            <p>Cases: ${d.cases.toLocaleString()}</p>            
+			<p>Active Cases: ${d.activeCases.toLocaleString()}</p>
             <p>Recovered: ${d.recovered.toLocaleString()}</p>
             <p>Deaths: ${d.deaths.toLocaleString()}</p>
             `            
@@ -235,6 +250,7 @@ function formatAllData(data, dateInput) {
         ct[i] = {
             name: c[i],
             date: countries[c[i]]['date'],
+			activeCases: (countries[c[i]]['today_confirmed']-(countries[c[i]]['today_recovered']+countries[c[i]]['today_deaths'])),
             cases: countries[c[i]]['today_confirmed'],
             recovered: countries[c[i]]['today_recovered'],
             deaths: countries[c[i]]['today_deaths']
