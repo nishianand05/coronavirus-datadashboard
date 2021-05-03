@@ -112,8 +112,8 @@ function scatPolt(dateInput){
                      .range([height - padding, padding]);
 
       var fScale = d3.scaleLinear()
-                     .domain(d3.extent(data, d => ((d.deaths/d.cases)*100)))
-                     .range(['darkgreen', 'darkred'])
+                     .domain(d3.extent(data, d => (d.cases-(d.deaths+d.recovered))))
+                     .range(['green', 'firebrick'])
 
 
       var rScale = d3.scaleLinear()
@@ -170,7 +170,7 @@ function scatPolt(dateInput){
 			  }})
             .attr('cx', d => xScale(d.cases))
             .attr('cy', d => yScale(d.deaths))
-            .attr('fill', d => fScale((d.deaths/d.cases)*100))
+            .attr('fill', d => fScale(d.cases-(d.deaths+d.recovered)))
             .attr('r', d => rScale(d.recovered));
     }
 
@@ -184,11 +184,10 @@ function scatPolt(dateInput){
           .html(`
              <p>Name: ${d.name}</p>
              <p>Date: ${d.date}</p>
-             <p>Cases: ${d.cases.toLocaleString()}</p>
+             <p>Cases: ${d.cases.toLocaleString()}</p>             
+			 <p>Active Cases: ${(d.cases-(d.deaths+d.recovered)).toLocaleString()}</p>
              <p>Recovered: ${d.recovered.toLocaleString()}</p>
              <p>Deaths: ${d.deaths.toLocaleString()}</p>             
-             <p>Case Fatality Rate: ${((d.deaths/d.cases)*100).toFixed(2)}%</p>
-
           `)
     }
 
