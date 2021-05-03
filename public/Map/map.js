@@ -90,6 +90,8 @@ function map(dateInput, attribute){
                     .enter()
                         .append('path')
                         .classed('country', true)
+						.attr('stroke', '#000')
+						.attr('stroke-width', '0.1px')
                         .attr('d', path)
                         .on('mousemove', showTooltip)
                         .on('touchstart', showTooltip)
