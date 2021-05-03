@@ -112,7 +112,7 @@ function scatPolt(dateInput){
                      .range([height - padding, padding]);
 
       var fScale = d3.scaleLinear()
-                     .domain(d3.extent(data, d => (d.cases-(d.deaths+d.recovered))))
+                     .domain(d3.extent(data, d => d.activeCases))
                      .range(['green', 'firebrick'])
 
 
@@ -170,7 +170,7 @@ function scatPolt(dateInput){
 			  }})
             .attr('cx', d => xScale(d.cases))
             .attr('cy', d => yScale(d.deaths))
-            .attr('fill', d => fScale(d.cases-(d.deaths+d.recovered)))
+            .attr('fill', d => fScale(d.activeCases))
             .attr('r', d => rScale(d.recovered));
     }
 
@@ -185,7 +185,7 @@ function scatPolt(dateInput){
              <p>Name: ${d.name}</p>
              <p>Date: ${d.date}</p>
              <p>Cases: ${d.cases.toLocaleString()}</p>             
-			 <p>Active Cases: ${(d.cases-(d.deaths+d.recovered)).toLocaleString()}</p>
+			 <p>Active Cases: ${d.activeCases.toLocaleString()}</p>
              <p>Recovered: ${d.recovered.toLocaleString()}</p>
              <p>Deaths: ${d.deaths.toLocaleString()}</p>             
           `)
@@ -213,6 +213,7 @@ function formatAllData(data, dateInput) {
         ct[i] = {
             name: c[i],
             date: countries[c[i]]['date'],
+			activeCases: (countries[c[i]]['today_confirmed']-(countries[c[i]]['today_deaths']+countries[c[i]]['today_recovered'])),
             cases: countries[c[i]]['today_confirmed'],
             recovered: countries[c[i]]['today_recovered'],
             deaths: countries[c[i]]['today_deaths']
