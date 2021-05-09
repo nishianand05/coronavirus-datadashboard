@@ -33,7 +33,7 @@ $("#navBtn").click(function(){
 $("#crossbtn").click(function(){
     $(".alert").removeClass("show");
     $(".alert").addClass("hide");
-    location.reload();
+    window.location.reload();
 })
 
 // ----------------------------------------- Date ----------------------------------------- 
