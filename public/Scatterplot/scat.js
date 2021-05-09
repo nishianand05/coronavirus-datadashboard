@@ -111,9 +111,9 @@ function scatPolt(dateInput){
                      .domain(d3.extent(data, d => d.deaths))
                      .range([height - padding, padding]);
 
-      var fScale = d3.scaleLinear()
+      var fScale = d3.scaleSqrt()
                      .domain(d3.extent(data, d => d.activeCases))
-                     .range(['green', 'firebrick'])
+                     .range(['#6e8c00', 'darkred'])
 
 
       var rScale = d3.scaleLinear()
