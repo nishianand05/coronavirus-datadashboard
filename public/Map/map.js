@@ -117,16 +117,21 @@ function map(dateInput, attribute){
         
             
             // Color range
-            var  colorRanges = {
+            var  colorRanges = {		
 				deaths: ["#400000", "#d03711"],
-                cases: ['#591d00','#f7b401'],
-                activeCases: ['#641220', '#d65a24'],
-                recovered: ['#73a942', '#004b23'],
+
+                cases: ['#421600','#fcdf03'],                
+				// cases: ['#591d00','#f7b401'],
+                // activeCases: ['#420d16', '#ff6c2b'],                
+				activeCases: ['#641220', '#d65a24'],
+                recovered: ['#449646', '#024201'],                
+				// recovered: ['#73a942', '#004b23'],
+
             };
             
             
             // Scale
-            var scale = d3.scaleLinear()
+            var scale = d3.scaleSqrt()
                             .domain([0, d3.max(coroArr, d => d[attribute])])
                             .range(colorRanges[attribute]);
 
