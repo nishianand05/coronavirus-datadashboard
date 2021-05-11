@@ -473,24 +473,3 @@ function formatAllData(data, dateInput) {
     return ct;
 
 }
-
-// ----------------------------------------- Format total data ----------------------------------------- 
-
-function totalData(data){
-
-    var tt = data['total']
-    var t = {
-        'date': tt['date'],
-        'cases': tt['today_confirmed'],
-        'newCases': tt['today_new_confirmed'],
-		'activeCases': (tt['today_confirmed']-(tt['today_deaths']+tt['today_recovered'])),
-        'newActiveCases': (tt['today_new_confirmed']-(tt['today_new_deaths']+tt['today_new_recovered'])),
-        'deaths': tt['today_deaths'],
-        'newDeaths': tt['today_new_deaths'],
-        'recovered': tt['today_recovered'],
-        'newRecovered': tt['today_new_recovered'],
-        'lastUpdated': data['updated_at'] 
-    }
-    return t;
-}
-

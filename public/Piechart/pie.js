@@ -44,7 +44,7 @@ function piechart(dateInput, attribute){
         // Data arrays
 
         var coroArr = formatAllData(data, dateInput);
-        var totData = totalData(data);
+        var totData = totalData(data[0]);
 
         AddTotalData(totData);
 
@@ -290,26 +290,3 @@ function formatAllData(data, dateInput) {
     }
     return ct;
 }
-
-// ----------------------------------------- Format total data ----------------------------------------- 
-
-function totalData(data){
-
-    var tt = data[0]['total']
-    var t = {
-        'date': tt['date'],
-        'cases': tt['today_confirmed'],
-        'newCases': tt['today_new_confirmed'],
-        'deaths': tt['today_deaths'],
-		'activeCases': (tt['today_confirmed']-(tt['today_deaths']+tt['today_recovered'])),
-        'newActiveCases': (tt['today_new_confirmed']-(tt['today_new_deaths']+tt['today_new_recovered'])),
-        'newDeaths': tt['today_new_deaths'],
-        'recovered': tt['today_recovered'],
-        'newRecovered': tt['today_new_recovered'],
-		'activeCases': (tt['today_confirmed']-(tt['today_deaths']+tt['today_recovered'])),
-		'newActiveCases':(tt['today_new_confirmed']-(tt['today_new_deaths']+tt['today_new_recovered'])),
-        'lastUpdated': data[0]['updated_at'] 
-    }
-    return t;
-}
-
