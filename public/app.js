@@ -64,6 +64,9 @@ function alertMessage(){
   
     $("#tCasesValue").text(`${totData['cases'].toLocaleString()}`);
     $("#newtCasesValue").text(`${(parseInt(totData['newCases'])<0?"-":"+") + totData['newCases'].toLocaleString()}`);
+	  
+	$("#tActiveCasesValue").text(`${totData['activeCases'].toLocaleString()}`);
+    $("#newtActiveCasesValue").text(`${(parseInt(totData['newActiveCases'])<0?"-":"+") + totData['newActiveCases'].toLocaleString()}`);
   
     $("#tDeathsValue").text(`${totData['deaths'].toLocaleString()}`);
     $("#newtDeathsValue").text(`${(parseInt(totData['newDeaths'])<0?"-":"+") + totData['newDeaths'].toLocaleString()}`);

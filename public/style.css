@@ -238,44 +238,68 @@ nav .navLinks a {
   }
   
   
-  #tCases, #tDeaths, #tRecovered {
+  #tCases, #tActiveCases, #tDeaths, #tRecovered {
     flex: auto;
     padding: 2%;
   }
   
-  #tDeaths {
+  /* #tDeaths {
     border-top: none;
     border-bottom: none;
     border-left: 1px solid burlywood;
     border-right: 1px solid burlywood;
-  }
+  } */
+
+#tActiveCases, #tDeaths, #tRecovered{
+	border-top: none;
+    border-bottom: none;
+	border-right: none;
+    border-left: 1px solid burlywood;
+}
   
-  #tCasesTitle, #tDeathsTitle, #tRecoveredTitle {
+  #tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
     color: burlywood;
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   
-  #tCasesValue, #tDeathsValue, #tRecoveredValue {
-    font-size: 2.5em;
+  #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
+    font-size: 2.2em;
     margin: 0;
   }
   
-  #newtCasesValue, #newtDeathsValue, #newtRecoveredValue {
+  #newtCasesValue, #newtActiveCasesValue, #newtDeathsValue, #newtRecoveredValue {
     color: #ccc;
   }
 
 
 /* ------------------------- Media Query --------------------------------------- */
+@media(max-width: 915px){
+	#tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
+		font-size: 1em;
+	}
+  
+  #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
+    font-size: 2em;
+  }
+}
 
-@media(max-width: 715px){
+@media(max-width: 765px){
+	#tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
+		font-size: 1.1em;
+	}
+  
+  #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
+    font-size: 2.2em;
+  }
     #totalValues{
       flex-direction: column;
     }
-    div#tDeaths {
-      border: none;
-      border-top: 1px solid burlywood;
-      border-bottom: 1px solid burlywood;
-    }
+	div#tActiveCases, div#tDeaths, div#tRecovered{
+	border-left: none;
+    border-bottom: none;
+	border-right: none;
+    border-top: 1px solid burlywood;
+}
 	#dateDiv input {
 		margin: 0 auto;
 	}

@@ -301,6 +301,8 @@ function totalData(data){
         'cases': tt['today_confirmed'],
         'newCases': tt['today_new_confirmed'],
         'deaths': tt['today_deaths'],
+		'activeCases': (tt['today_confirmed']-(tt['today_deaths']+tt['today_recovered'])),
+        'newActiveCases': (tt['today_new_confirmed']-(tt['today_new_deaths']+tt['today_new_recovered'])),
         'newDeaths': tt['today_new_deaths'],
         'recovered': tt['today_recovered'],
         'newRecovered': tt['today_new_recovered'],
