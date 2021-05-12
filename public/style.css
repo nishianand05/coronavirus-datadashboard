@@ -9,7 +9,7 @@ html {
 
 body {
   cursor: context-menu;
-  zoom: 80%;
+  /* zoom: 80%; */
   margin: 0;
   font-family: 'Barlow', sans-serif;
   background-color: #141a1d;
@@ -75,9 +75,9 @@ body {
 
 #title{
   text-align: center;
-  font-size: 3em;
-  margin: 0 80px;
-  margin-top: 60px;
+  /* font-size: 3em; */
+  /* margin: 0 80px; */
+  margin: 40px;
   font-weight: normal;
 }
 
@@ -100,7 +100,7 @@ nav {
     bottom: 0;
     overflow-x: hidden;
     z-index: 1;
-    text-align: center;
+    /* text-align: center; */
   }
   
   #navBtn {
@@ -118,13 +118,16 @@ nav {
     padding: 0;
     margin: 0;
     display: block;
-    margin-top: 200%;
+    margin-top: 70%;
+	  /* position: relative;
+	  top: 50%;
+	  transform: translatey(-50%); */
   }
   
   nav .navLinks {
     cursor: pointer;
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px 20px;
   }
   
 nav .navLinks a {
@@ -144,13 +147,18 @@ nav .navLinks a {
   }
   
 
+nav i {
+	margin-right: 10px;
+}
+
 /* -------------------------------- Container --------------------------------  */
 
 #container {
-    margin: 3% 8%;
-    padding-bottom: 3%;
+    margin: 3%;
+	margin-top: 0;
+    /* padding-bottom: 3%; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -159,10 +167,10 @@ nav .navLinks a {
 
 #mapTitle, #rectTitle, #pieTitle, #scatTitle, #infoTitle {
     text-align: center;
-    margin: 50px;
+    margin: 40px;
     margin-bottom: 0;
     font-weight: normal;
-	font-size: 1.6em;
+	font-size: 1.2em;
   }
     
 /* -------------------------------- Tooltip styles  -------------------------------- */
@@ -230,19 +238,19 @@ nav .navLinks a {
 #totalValues {
     background-color: #0f1418;
     border-radius: 15px;
-    margin: 3% 0;
+    /* margin: 3% 0; */
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
-    padding: 1.5%;
+    padding: 1%;
   }
   
   
   #tCases, #tActiveCases, #tDeaths, #tRecovered {
     flex: auto;
-    padding: 2%;
+    padding: 1%;
   }
   
   /* #tDeaths {
@@ -261,40 +269,42 @@ nav .navLinks a {
   
   #tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
     color: burlywood;
-    font-size: 1.1em;
+    font-size: 0.8em;
   }
   
   #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
-    font-size: 2.2em;
+    font-size: 1.5em;
     margin: 0;
   }
   
   #newtCasesValue, #newtActiveCasesValue, #newtDeathsValue, #newtRecoveredValue {
     color: #ccc;
+	font-size: 0.6em;
   }
 
 
 /* ------------------------- Media Query --------------------------------------- */
+
 @media(max-width: 915px){
 	#tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
-		font-size: 1em;
+		/* font-size: 1em; */
 	}
   
   #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
-    font-size: 2em;
+    /* font-size: 2em; */
   }
 }
 
 @media(max-width: 765px){
-	#title{
+	/* #title{
 		font-size: 2.7em;
-	}
+	} */
 	#tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
-		font-size: 1.1em;
+		/* font-size: 1.1em; */
 	}
   
   #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
-    font-size: 2.2em;
+    /* font-size: 2.2em; */
   }
     #totalValues{
       flex-direction: column;
@@ -314,13 +324,15 @@ nav .navLinks a {
 /* -------------------- last updated ------------------- */
 
 #lastUpdated {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     background-color: #0f1418;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     color: burlywood;
-    font-size: 1.2em;
-    padding: 30px;
+    /* font-size: 1.2em; */
+    padding: 10px;
+	position: relative;
+	bottom: 0;
   }
   
   

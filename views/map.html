@@ -23,11 +23,11 @@
 
         <nav>
             <ul id='navUL' class='navcollaps'>
-                <li class='navLinks currentNV'><a href='/map'><i class="fas fa-globe-asia fa-lg"></i></a></li>
-                <li class='navLinks'><a href='/scatterplot'><i class="far fa-circle fa-lg"></i></a></li>
-                <li class='navLinks'><a href='/barchart'><i class="far fa-chart-bar fa-lg"></i></a></li>
-                <li class='navLinks'><a href='/piechart'><i class="fas fa-chart-pie fa-lg"></i></a></li> 
-                <li class='navLinks'><a href='/info'><i class="fas fa-info-circle fa-lg"></i></a></li> 
+                <li class='navLinks currentNV'><a href='/map'><i class="fas fa-globe-asia fa-lg"></i> Map </a></li>
+                <li class='navLinks'><a href='/scatterplot'><i class="far fa-circle fa-lg"></i> Scatterplot </a></li>
+                <li class='navLinks'><a href='/barchart'><i class="far fa-chart-bar fa-lg"></i> Barchart </a></li>
+                <li class='navLinks'><a href='/piechart'><i class="fas fa-chart-pie fa-lg"></i> Piechart </a></li> 
+                <li class='navLinks'><a href='/info'><i class="fas fa-info-circle fa-lg"></i> Information </a></li> 
             </ul>
         </nav>
 
@@ -68,11 +68,13 @@
                 </div>
             </div>
 
-            <!-- MAP TITLE -->
-            <h1 id='mapTitle'>Map - Cases (2021-04-21)</h1>
+            
             
             <!-- Map SVG -->
             <div id='MapDiv'>
+				<!-- MAP TITLE -->
+                <h1 id='mapTitle'>Map - Cases (2021-04-21)</h1>
+				
                 <svg version="1.1"
                 baseProfile="full"
                 xmlns="http://www.w3.org/2000/svg" id='map'
@@ -94,19 +96,20 @@
                     <p>Select Attribute</p>
                     
                     <form>
-						
-						<input type="radio" class="radio" name="attribute" value="cases"  id="cases" checked>
-                        <label for="cases">Cases</label>
-						
-                        <input type="radio" class="radio" name="attribute" value="activeCases"  id="activeCases">
-                        <label for="activeCases">Active Cases</label>
-						
+						<ul>
+							<li><input type="radio" class="radio" name="attribute" value="cases"  id="cases" checked>
+								<label for="cases">Cases</label></li>
 
-                        <input type="radio" class="radio" name="attribute" value="deaths" id="deaths">
-                        <label for="deaths">Deaths</label>
+							<li><input type="radio" class="radio" name="attribute" value="activeCases"  id="activeCases">
+								<label for="activeCases">Active Cases</label></li>
 
-                        <input type="radio" class="radio" name="attribute" value="recovered" id="recovered">
-                        <label for="recovered">Recovered</label>
+
+							<li><input type="radio" class="radio" name="attribute" value="deaths" id="deaths">
+								<label for="deaths">Deaths</label></li>
+
+							<li><input type="radio" class="radio" name="attribute" value="recovered" id="recovered">
+								<label for="recovered">Recovered</label></li>
+						</ul>
                     </form>
                 </div>
 
@@ -115,11 +118,12 @@
             
             </div>
 
-            <div id='lastUpdated'>
-                <p></p>
-            </div>
+
 
         </div>
+			<div id='lastUpdated'>
+                <p></p>
+            </div>
     </div>
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
