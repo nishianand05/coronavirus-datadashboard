@@ -9,14 +9,13 @@
   align-items: center;
   padding: 1%;
   margin: 2%;
-	margin-top: 0;
+  margin-top: 0;
   width: 20%;
-	font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 #userAttr p {
   color: burlywood;
-  /* font-size: 1.2em; */
 }
 
 /* Date div */
@@ -33,7 +32,7 @@
 }
 
 #dateDiv input{
-  padding: 3%;
+  padding: 1.5%;
 }
 
 /* Attr div */
@@ -43,7 +42,8 @@
   justify-content: center;
   flex-direction: column;
   margin: 5px;
-  padding: 25px;
+  padding: 20px;
+  padding-top: 0;
   border-bottom: 1px solid #ccc;
   text-align: center;
   width: 70%;
@@ -56,7 +56,7 @@
 /* Refresh button */
 
 #refresh {
-	font-size: 0.8em;
+  font-size: 0.8em;
   font-weight: 600;
   margin: 20px 0px;
   width: 50%;
@@ -83,6 +83,7 @@ form ul {
     margin: 0;
     padding: 5px;
 }
+
 /* -------------------------------- Map div -------------------------------- */
 
 #MapDiv{
@@ -90,7 +91,7 @@ form ul {
   border-radius: 15px;
   overflow: auto;
   margin: 2%;
-	margin-top: 0;
+  margin-top: 0;
   width: 65%;
 }
 
@@ -103,32 +104,18 @@ svg{
   display: block;
 }
 
-/* @media(max-width: 600px){
-		#AttrDiv form {
-		display: flex; */
-		/* flex-direction: column; */
-		/* justify-content: center;
-		align-items: center;
-		flex-wrap: nowrap; */
-	/* }
-} */
 
-/* @media(max-width: 395px){
-	#AttrDiv form {
-		flex-wrap: wrap;
-	}
-	#AttrDiv form input {
-		margin: 15px;
-	}
-} */
+/* -------------------------------- Media Query -------------------------------- */
 
 @media(max-width: 870px){
-	#container{
-		flex-direction: column;
-	}
+	
 	#MapDiv, #userAttr {
 		width: 100%;
 		margin: 0;
+
+	}
+	#MapDiv {
+		margin-bottom: 3%;
 	}
 }
 

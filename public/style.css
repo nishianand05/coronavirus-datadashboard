@@ -9,7 +9,6 @@ html {
 
 body {
   cursor: context-menu;
-  /* zoom: 80%; */
   margin: 0;
   font-family: 'Barlow', sans-serif;
   background-color: #141a1d;
@@ -53,11 +52,11 @@ body {
   border: none;
   position: absolute;
   background-color: #141a1d;
-  color: #85182a;
+  color: burlywood;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: loadIcon 1.5s infinite alternate;
+  animation: loadIcon 1.2s infinite alternate linear;
 }
 
 @keyframes loadIcon {
@@ -67,7 +66,6 @@ body {
 
   100% {
     transform: translate(-50%, -50%) rotate(270deg);
-	  color: #538d22;
   }
 }
 
@@ -75,8 +73,6 @@ body {
 
 #title{
   text-align: center;
-  /* font-size: 3em; */
-  /* margin: 0 80px; */
   margin: 40px;
   font-weight: normal;
 }
@@ -100,52 +96,44 @@ nav {
     bottom: 0;
     overflow-x: hidden;
     z-index: 1;
-    /* text-align: center; */
-  }
+}
   
-  #navBtn {
-    cursor: pointer;
-    color: red;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    padding: 25px;
-    text-align: center;
-  }
+#navBtn {
+	cursor: pointer;
+	color: red;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	padding: 25px;
+	text-align: center;
+}
   
-  nav #navUL {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-    margin-top: 70%;
-	  /* position: relative;
-	  top: 50%;
-	  transform: translatey(-50%); */
-  }
-  
-  nav .navLinks {
-    cursor: pointer;
-    margin-top: 15px;
-    padding: 15px 20px;
-  }
+nav #navUL {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	margin-top: 70%;
+}
+
+nav .navLinks {
+	cursor: pointer;
+	margin-top: 15px;
+	padding: 15px 20px;
+}
   
 nav .navLinks a {
 	text-decoration: none;
-	  color: #f5f3f4;
+	color: #f5f3f4;
 }
-  nav .navLinks:hover{
-    background-color: #212224;
-  }
-  
-  nav .currentNV a {
-    color: burlywood;
-  }
-  
-  .navBtnColor {
-    color: burlywood;
-  }
-  
+
+nav .navLinks:hover{
+	background-color: #212224;
+}
+
+nav .currentNV a, .navBtnColor {
+	color: burlywood;
+}
 
 nav i {
 	margin-right: 10px;
@@ -154,14 +142,13 @@ nav i {
 /* -------------------------------- Container --------------------------------  */
 
 #container {
-    margin: 3%;
+    margin: 3.5%;
 	margin-top: 0;
-    /* padding-bottom: 3%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-  }
+}
   
 /* ----------------------------------------- Chart title -----------------------------------------  */
 
@@ -171,7 +158,7 @@ nav i {
     margin-bottom: 0;
     font-weight: normal;
 	font-size: 1.2em;
-  }
+}
     
 /* -------------------------------- Tooltip styles  -------------------------------- */
 
@@ -244,7 +231,7 @@ nav i {
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
-    padding: 1%;
+    padding: 2%;
   }
   
   
@@ -253,13 +240,6 @@ nav i {
     padding: 1%;
   }
   
-  /* #tDeaths {
-    border-top: none;
-    border-bottom: none;
-    border-left: 1px solid burlywood;
-    border-right: 1px solid burlywood;
-  } */
-
 #tActiveCases, #tDeaths, #tRecovered{
 	border-top: none;
     border-bottom: none;
@@ -285,54 +265,66 @@ nav i {
 
 /* ------------------------- Media Query --------------------------------------- */
 
-@media(max-width: 915px){
-	#tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
-		/* font-size: 1em; */
-	}
-  
-  #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
-    /* font-size: 2em; */
-  }
-}
 
 @media(max-width: 765px){
-	/* #title{
-		font-size: 2.7em;
-	} */
-	#tCasesTitle, #tActiveCasesTitle, #tDeathsTitle, #tRecoveredTitle {
-		/* font-size: 1.1em; */
+	
+	#tCases, #tActiveCases, #tDeaths, #tRecovered {
+		width: 40%;
 	}
-  
-  #tCasesValue, #tActiveCasesValue, #tDeathsValue, #tRecoveredValue {
-    /* font-size: 2.2em; */
-  }
-    #totalValues{
-      flex-direction: column;
-    }
-	div#tActiveCases, div#tDeaths, div#tRecovered{
-	border-left: none;
-    border-bottom: none;
-	border-right: none;
-    border-top: 1px solid burlywood;
-}
+	
+	#tActiveCases {
+		border: none;
+		border-bottom: 1px solid burlywood;		
+		border-left: 1px solid burlywood;
+
+	}
+	#tDeaths {
+		border: none;
+	}
+	
+	#tCases {
+		border-bottom: 1px solid burlywood;
+	}
+	
 	#dateDiv input {
 		margin: 0 auto;
 	}
 	
   }
 
+
+@media(max-width: 385px){
+	#totalValues {
+		flex-direction: column;
+	}
+	#tCases, #tActiveCases, #tDeaths, #tRecovered {
+		width: auto;
+	}
+	#tActiveCases,#tRecovered {
+		border-left: none;
+	}
+	#tDeaths {
+		border-bottom: 1px solid burlywood;
+	}
+}
+
 /* -------------------- last updated ------------------- */
 
 #lastUpdated {
-    /* width: 100%; */
     text-align: center;
     background-color: #0f1418;
-    /* border-radius: 10px; */
     color: burlywood;
-    /* font-size: 1.2em; */
     padding: 10px;
 	position: relative;
 	bottom: 0;
   }
+
+#lastUpdated p{
+	margin: 10px;
+}
+
+#myName {
+	margin-bottom: 10px;
+}
   
   

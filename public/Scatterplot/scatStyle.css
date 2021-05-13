@@ -5,9 +5,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
-  padding: 0;
-  margin: 3% 0;
-  width: 100%;
+  /* padding: 0; */
+  /* margin: 3% 0; */
+  width: 30%;
+	  font-size: 0.8em;
+
 }
 
 /* Scale display */
@@ -15,15 +17,15 @@
 #scaleDisp {
   border-radius: 15px;
   background-color: #0f1418;
-  margin: 3% 0;
+  margin: 1% 0;
   padding: 4%;
   width: auto;
-  width: 40%;
+  width: 100%;
 }
 
 #scaleDisp #scaleDispTitle {
   color: burlywood;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   margin: 0;
   margin-bottom: 30px;
   text-align: center;
@@ -40,20 +42,20 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  width: 40%;
-  margin: 3% 0;
+  width: 100%;
+  /* margin: 3% 0; */
   padding: 4%;
 }
 
 #dateDiv p {
   color: burlywood;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   margin: 0;
 }
 
 #dateDiv input{
-  padding: 10px;
-  margin: 30px;
+  padding: 1.5%;
+  margin: 30px 0;
   width: 70%;
 }
 
@@ -85,8 +87,7 @@
 #ScatDiv{
   background-color: #0f1418;
   border-radius: 15px;
-  margin: 3% 0;
-  width: 100%;
+  width: 65%;
   padding: 1%;
 }
 

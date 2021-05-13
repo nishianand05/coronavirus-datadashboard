@@ -13,7 +13,7 @@
 
 
     <!-- ----------------------------------------- Loading div ----------------------------------------- -->
-    <div class='loadingIcon'><i class="fas fa-virus fa-8x"></i></div>
+    <div class='loadingIcon'><i class="fas fa-virus fa-6x"></i></div>
 
     <!-- ----------------------------------------- Content ----------------------------------------- -->
     <div class="content">
@@ -46,7 +46,7 @@
         <!-- CONTAINER -->
         <div id='container'>
 
-            <div id='totalValues'>
+            <!-- <div id='totalValues'>
                 <div id='tCases'>
                     <p id='tCasesTitle'>Cases Worldwide</p>
                     <p id='tCasesValue'></p>
@@ -68,13 +68,14 @@
                     <p id='tRecoveredValue'></p>
                     <p id='newtRecoveredValue'></p>
                 </div>
-            </div>
+            </div> -->
 
-            <!-- SCATTERPLOT TITLE -->
-            <h1 id='scatTitle'>Scatterplot - Cases (2021-04-12)</h2>
+
     
             <!-- Scat SVG -->
-            <div id='ScatDiv'>
+            <div id='ScatDiv'>            
+				<!-- SCATTERPLOT TITLE -->
+            	<h1 id='scatTitle'>Scatterplot - Cases (2021-04-12)</h2>
                 <svg version="1.1"
                 baseProfile="full"
                 xmlns="http://www.w3.org/2000/svg" id='scat'
@@ -105,11 +106,13 @@
 
             </div>
 
-            <div id='lastUpdated'>
-                <p></p>
-            </div>
 
-        </div>
+
+        </div>			
+			<div id='lastUpdated'>
+                <p></p>
+				<div id='myName'>Project by Nishi Anand</div>
+            </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
