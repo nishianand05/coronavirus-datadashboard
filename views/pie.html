@@ -13,7 +13,7 @@
 
 
         <!-- ----------------------------------------- Loading div ----------------------------------------- -->
-        <div class='loadingIcon'><i class="fas fa-virus fa-8x"></i></div>
+        <div class='loadingIcon'><i class="fas fa-virus fa-6x"></i></div>
 
         <!-- ----------------------------------------- Content ----------------------------------------- -->
         <div class="content">
@@ -73,13 +73,13 @@
 
                 <!-- Pie chart SVG -->
                 <div id='PieDiv'>
-                <!-- PIE TITLE -->
-                <h1 id='pieTitle'>Piechart - Cases (2021-04-21)</h1>
+<!-- PIE TITLE -->
+                <h1 id='pieTitle'>Piechart - Cases (2021-04-21)</h1>                
 					
                     <svg version="1.1"
                     baseProfile="full"
                     xmlns="http://www.w3.org/2000/svg" id='pie'
-                    viewBox="0 0 600 600" enable-background="new 0 0 600 600" 
+                    viewBox="0 0 400 400" enable-background="new 0 0 400 400" 
                     xml:space="preserve"></svg>
                 </div>
 
@@ -96,31 +96,33 @@
                     <div id='AttrDiv'>
                         <p>Select Attribute</p>
                         
-                        <form>
-                            <input type="radio" class="radio" name="attribute" value="cases"  id="cases" checked>
-                            <label for="cases">Cases</label>
-							
-                            <input type="radio" class="radio" name="attribute" value="activeCases"  id="activeCases">
-                            <label for="activeCases">Active Cases</label>
+                    <form>
+						<ul>
+							<li><input type="radio" class="radio" name="attribute" value="cases"  id="cases" checked>
+								<label for="cases">Cases</label></li>
 
-                            <input type="radio" class="radio" name="attribute" value="deaths" id="deaths">
-                            <label for="deaths">Deaths</label>
+							<li><input type="radio" class="radio" name="attribute" value="activeCases"  id="activeCases">
+								<label for="activeCases">Active Cases</label></li>
 
-                            <input type="radio" class="radio" name="attribute" value="recovered" id="recovered">
-                            <label for="recovered">Recovered</label>
-                        </form>
+
+							<li><input type="radio" class="radio" name="attribute" value="deaths" id="deaths">
+								<label for="deaths">Deaths</label></li>
+
+							<li><input type="radio" class="radio" name="attribute" value="recovered" id="recovered">
+								<label for="recovered">Recovered</label></li>
+						</ul>
+                    </form>
                     </div>
 
                     <!-- Refresh button -->
                     <button id='refresh'>Refresh</button>
                 
                 </div>
-            
-                <div id='lastUpdated'>
-                    <p></p>
-                </div>
-
             </div>
+			<div id='lastUpdated'>
+			<p></p>
+			<div id='myName'>Project by Nishi Anand</div>
+		</div>
         </div>
 
 

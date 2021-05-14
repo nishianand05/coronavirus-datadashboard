@@ -57,8 +57,8 @@ function piechart(dateInput, attribute){
 
         // SVG width and height
 
-        var width = 600;
-        var height = 600;
+        var width = 400;
+        var height = 400;
         
         var svg = d3.select('#pie')
                     .attr('width', width)
@@ -104,17 +104,18 @@ function piechart(dateInput, attribute){
             .append('text')
                 .text(`${attribute.charAt(0).toUpperCase() + attribute.slice(1)} Worldwide`)
                 .attr('text-anchor', 'middle')
-                .attr('dy', '-30px')
+                .attr('dy', '-20px')
                 .style('font-weight', '500')
                 .style('fill','white')
+		        .style('font-size', '0.8em')
                 .classed('totTitle', true)
 
         tot
         .append('text')
             .text(`${totData[attribute].toLocaleString()}`)
             .attr('text-anchor', 'middle')
-            .attr('dy', '20px')
-            .style('font-size', '2em')
+            .attr('dy', '15px')
+            .style('font-size', '1.5em')
             .style('fill','white')
             .classed('totAttr', true)
                 
@@ -132,8 +133,8 @@ function piechart(dateInput, attribute){
         .append('text')
             .text(`${(parseInt(totData[newAt[attribute]])<0?"-":"+") + totData[newAt[attribute]].toLocaleString()}`)
             .attr('text-anchor', 'middle')
-            .attr('dy', '45px')
-            .style('font-size', '0.8em')
+            .attr('dy', '35px')
+            .style('font-size', '0.6em')
             .style('fill', 'darkgrey')
             .classed('totNewAttr', true)
 
@@ -167,7 +168,7 @@ function piechart(dateInput, attribute){
             // Paths
             var path = d3.arc()
                         .outerRadius(width/2 - 10)
-                        .innerRadius(120)
+                        .innerRadius(110)
         
         
         

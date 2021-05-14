@@ -7,14 +7,15 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2%;
-  margin: 3% 0;
-  width: 100%;
+  padding: 1%;
+  margin: 2%;
+  margin-top: 0;
+  width: 20%;
+  font-size: 0.8em;
 }
 
 #userAttr p {
   color: burlywood;
-  font-size: 1.2em;
 }
 
 /* Date div */
@@ -31,7 +32,7 @@
 }
 
 #dateDiv input{
-  padding: 10px;
+  padding: 1.5%;
 }
 
 /* Attr div */
@@ -41,7 +42,8 @@
   justify-content: center;
   flex-direction: column;
   margin: 5px;
-  padding: 25px;
+  padding: 20px;
+  padding-top: 0;
   border-bottom: 1px solid #ccc;
   text-align: center;
   width: 70%;
@@ -54,14 +56,15 @@
 /* Refresh button */
 
 #refresh {
+  font-size: 0.8em;
   font-weight: 600;
-  margin: 30px 0px;
+  margin: 20px 0px;
   width: 50%;
   background-color: burlywood;
   outline: none;
   border: none;
   border-radius: 15px;
-  padding: 10px;
+  padding: 8px;
   color: #0f1418;
   box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
 }
@@ -74,6 +77,12 @@
   box-shadow: inset 2px 3px 3px rgba(0,0,0,0.5); 
 }
 
+form ul {
+	text-align: start;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
 
 /* -------------------------------- Rect div -------------------------------- */
 
@@ -83,8 +92,9 @@
   border-radius: 15px;
   overflow: auto;
   margin: 3% 0;
-  width: 100%;
-  height: 600px;
+  width: 72%;
+  height: 650px;
+  overflow-y: hidden; 
 }
 
 svg{
@@ -109,21 +119,16 @@ svg{
 }
 
 
-@media(max-width: 600px){
-	#AttrDiv form {
-		display: flex;
-		/* flex-direction: column; */
-		justify-content: center;
-		align-items: center;
-		flex-wrap: nowrap;
-	}
-}
+/* -------------------------------- Media Query -------------------------------- */
 
-@media(max-width: 395px){
-	#AttrDiv form {
-		flex-wrap: wrap;
+@media(max-width: 885px){
+	
+	#RectDiv, #userAttr {
+		width: 100%;
+		margin: 0;
+
 	}
-	#AttrDiv form input {
-		margin: 15px;
+	#RectDiv {
+		margin: 3% 0;
 	}
 }

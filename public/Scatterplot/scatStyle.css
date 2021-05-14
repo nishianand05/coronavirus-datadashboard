@@ -6,10 +6,10 @@
   justify-content: space-between;
   align-items: stretch;
   /* padding: 0; */
-  /* margin: 3% 0; */
+  margin: 2% 0;
   width: 30%;
-	  font-size: 0.8em;
-
+  font-size: 0.8em;
+	/* border: 1px solid red; */
 }
 
 /* Scale display */
@@ -17,9 +17,9 @@
 #scaleDisp {
   border-radius: 15px;
   background-color: #0f1418;
-  margin: 1% 0;
-  padding: 4%;
-  width: auto;
+  margin: 3% 0;
+  padding: 25px;
+  /* width: auto; */
   width: 100%;
 }
 
@@ -43,8 +43,8 @@
   flex-direction: column;
   text-align: center;
   width: 100%;
-  /* margin: 3% 0; */
-  padding: 4%;
+  margin: 3% 0;
+  padding: 25px;
 }
 
 #dateDiv p {
@@ -55,20 +55,24 @@
 
 #dateDiv input{
   padding: 1.5%;
-  margin: 30px 0;
-  width: 70%;
+  margin: 20px 0;
+  /* width: 70%; */
 }
 
 /* Refresh button */
 
+/* Refresh button */
+
 #refresh {
+  font-size: 0.8em;
   font-weight: 600;
+  /* margin: 20px 0px; */
   width: 50%;
   background-color: burlywood;
   outline: none;
   border: none;
   border-radius: 15px;
-  padding: 10px;
+  padding: 8px;
   color: #0f1418;
   box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
 }
@@ -89,6 +93,10 @@
   border-radius: 15px;
   width: 65%;
   padding: 1%;
+  margin: 2% 0;
+  /* border: 1px solid red; */
+
+
 }
 
 /* SVG */
@@ -113,7 +121,7 @@ svg{
 
 /* ------------------------- Media Query --------------------------------------- */
 
-@media(max-width: 715px){
+/* @media(max-width: 715px){
   #scaleDisp, #dateDiv{
     margin: 3% 0;
     width: auto;
@@ -124,4 +132,53 @@ svg{
     align-items: stretch;
   }
 
+} */
+
+@media(max-width: 1030px){
+	#ScatDiv, #userAttr {
+		width: 100%;
+	}
+	#userAttr {
+		margin-top: 0;
+	}
+	#ScatDiv, #totalValues {
+		margin-bottom: 3%;
+	}
+	#userAttr #scaleDisp, #userAttr #dateDiv {
+		margin: 0;
+		width: 43%;
+	}
+}
+
+@media(max-width: 830px){
+	#userAttr #scaleDisp, #userAttr #dateDiv {
+		width: 42%;
+	}
+}
+
+@media(max-width: 730px){
+	#userAttr #scaleDisp, #userAttr #dateDiv {
+		width: 41%;
+	}
+}
+
+@media(max-width: 58px){
+	#userAttr #scaleDisp, #userAttr #dateDiv {
+		width: 40%;
+	}
+}
+
+@media(max-width: 660px){
+	#userAttr #scaleDisp, #userAttr #dateDiv {
+		width: 39%;
+	}
+}
+
+@media(max-width: 540px){
+	#userAttr #scaleDisp, #userAttr #dateDiv {
+		width: 100%;
+	}
+	#userAttr #scaleDisp {
+		margin-bottom: 3%;
+	}
 }

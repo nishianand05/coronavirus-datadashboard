@@ -13,7 +13,7 @@
 
     
     <!-- ----------------------------------------- Loading div ----------------------------------------- -->
-    <div class='loadingIcon'><i class="fas fa-virus fa-8x"></i></div>
+    <div class='loadingIcon'><i class="fas fa-virus fa-6x"></i></div>
 
     <!-- ----------------------------------------- Content ----------------------------------------- -->
     <div class="content">
@@ -69,11 +69,12 @@
                 </div>
             </div>
 
-            <!-- Bar TITLE -->
-            <h1 id='rectTitle'>Bar Chart - Cases (2021-04-21)</h1>
+            
 
             <!-- Rect SVG -->
             <div id='RectDiv'>
+				<!-- Bar TITLE -->
+            	<h1 id='rectTitle'>Bar Chart - Cases (2021-04-21)</h1>
                 <svg version="1.1"
                 baseProfile="full"
                 xmlns="http://www.w3.org/2000/svg" id='rect'
@@ -94,17 +95,20 @@
                     <p>Select Attribute</p>
                     
                     <form>
-                        <input type="radio" class="radio" name="attribute" value="cases"  id="cases" checked>
-                        <label for="cases">Cases</label>
-						
-                        <input type="radio" class="radio" name="attribute" value="activeCases"  id="activeCases">
-                        <label for="activeCases">Active Cases</label>
-						
-                        <input type="radio" class="radio" name="attribute" value="deaths" id="deaths">
-                        <label for="deaths">Deaths</label>
+						<ul>
+							<li><input type="radio" class="radio" name="attribute" value="cases"  id="cases" checked>
+								<label for="cases">Cases</label></li>
 
-                        <input type="radio" class="radio" name="attribute" value="recovered" id="recovered">
-                        <label for="recovered">Recovered</label>
+							<li><input type="radio" class="radio" name="attribute" value="activeCases"  id="activeCases">
+								<label for="activeCases">Active Cases</label></li>
+
+
+							<li><input type="radio" class="radio" name="attribute" value="deaths" id="deaths">
+								<label for="deaths">Deaths</label></li>
+
+							<li><input type="radio" class="radio" name="attribute" value="recovered" id="recovered">
+								<label for="recovered">Recovered</label></li>
+						</ul>
                     </form>
                 </div>
 
@@ -113,10 +117,12 @@
             
             </div>
 
-            <div id='lastUpdated'>
-                <p></p>
-            </div>
 
+
+        </div>            
+		<div id='lastUpdated'>
+			<p></p>
+			<div id='myName'>Project by Nishi Anand</div>
         </div>
     </div>
 
