@@ -9,7 +9,7 @@ app.set('view engine', 'html');
 
 
 app.get('/', function(req, res){
-	res.render('map');
+	res.render('home');
 });
 
 app.get('/map', function(req, res){
