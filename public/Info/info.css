@@ -1,8 +1,11 @@
 /* ----------------------------------------- info title -----------------------------------------  */
-
+#container {
+	justify-content: space-evenly;
+} 
 #infoTitle {
     font-size: 1.5em;
 	margin: 40px;
+	color: burlywood;
 }
 
 

@@ -222,8 +222,8 @@ function barChart(dateInput, attribute){
             var tooltip = d3.select('.tooltip');
             tooltip
                 .style('opacity', 1)
-                .style('left', ( d3.event.pageX - tooltip.node().offsetWidth / 5 ) + 'px' )
-                .style('top', ( d3.event.pageY - tooltip.node().offsetHeight/2 + 100 ) + 'px')
+                .style('left', ( d3.event.pageX - tooltip.node().offsetWidth/2 ) + 'px' )
+                .style('top', ( d3.event.pageY - tooltip.node().offsetHeight/2 - 80 ) + 'px')
                 .style('color', 'white')
                 .html(Ttext)
         }
