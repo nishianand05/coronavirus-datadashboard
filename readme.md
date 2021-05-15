@@ -1,6 +1,6 @@
 # Coronavirus Data Dashboard
 
-This project uses D3.js to visualize coronavirus data. The data dashboard consists of a **Map, Bar chart, Pie chart, and a Scatterplot** based on mainly 3 attributes - **Number of Cases, Deaths and Recovered patients**. The dashboard allows user to input dates and choose the attribute they want.
+This project uses D3.js to visualize coronavirus data. The data dashboard consists of a **Map, Bar chart, Pie chart, and a Scatterplot** based on mainly 4 attributes - **Number of Cases, Active cases, Deaths and Recovered patients**. The dashboard allows user to input dates and choose the attribute they want.
 
 ## Resources
 
