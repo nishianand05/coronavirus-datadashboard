@@ -85,10 +85,12 @@ body {
 /* -------------------------------- Nav Bar Styles -------------------------------- */
 
 nav {
-    display: block;
+	user-select: none;
+    display: none;
     color: white;
     height: 100%;
-    background-color: #303335;
+    /* background-color: #303335; */
+	background-color: #222425;
     position: fixed;
     margin: 0;
     top: 0;
@@ -96,18 +98,30 @@ nav {
     bottom: 0;
     overflow-x: hidden;
     z-index: 1;
+	box-shadow: 0px 0px 8000px 8000px rgba(0,0,0,0.85);
 }
   
 #navBtn {
+	user-select: none;
 	cursor: pointer;
-	color: red;
 	position: fixed;
 	top: 0;
 	z-index: 2;
-	padding: 25px;
+	padding: 15px;
+	margin: 10px;
 	text-align: center;
 }
+
+.navBtnAlt {
+	background: rgba(16, 21, 25, 0.85);
+    border-radius: 50%;
+	color: burlywood;
+}
   
+.red {
+	color: red;
+}
+
 nav #navUL {
 	list-style: none;
 	padding: 0;
@@ -128,10 +142,12 @@ nav .navLinks a {
 }
 
 nav .navLinks:hover{
-	background-color: #212224;
+	/* background-color: #212224;	 */
+	background-color: #181a1b;
+
 }
 
-nav .currentNV a, .navBtnColor {
+nav .currentNV a {
 	color: burlywood;
 }
 
@@ -193,7 +209,7 @@ nav i {
     margin-right: -50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    box-shadow: 0px 0px 800px 800px rgba(0,0,0,0.9);
+    box-shadow: 0px 0px 8000px 8000px rgba(0,0,0,0.85);
   }
   
   .alert p {

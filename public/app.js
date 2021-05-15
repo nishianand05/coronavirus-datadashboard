@@ -19,16 +19,25 @@ $(window).on('load', function(){
 
 $("#navBtn").click(function(){
     // console.log('clicked');
-      $("nav").toggleClass("hide");
-      if($("#navBtn i").hasClass("fa-times")){
-        $("#navBtn i").removeClass("fa-times");
-        $("#navBtn i").addClass("fa-ellipsis-v navBtnColor");
+      $("nav").toggleClass("show");
+      if($("#navBtn i").hasClass("fa-times red")){
+        $("#navBtn i").removeClass("fa-times red");
+        $("#navBtn i").addClass("fa-bars");        
+		$("#navBtn").addClass("navBtnAlt");
       } else {
-        $("#navBtn i").addClass("fa-times");
-        $("#navBtn i").removeClass("fa-ellipsis-v navBtnColor");
+        $("#navBtn i").addClass("fa-times red");
+        $("#navBtn i").removeClass("fa-bars");        
+		$("#navBtn").removeClass("navBtnAlt");
       }
 });
-  
+
+$(window).resize(function(){
+if($(window).width() < 390){
+	$("#navBtn i").removeClass("fa-lg");        
+} else {
+	$("#navBtn i").addClass("fa-lg");        
+}
+})
 
 $("#crossbtn").click(function(){
     $(".alert").removeClass("show");

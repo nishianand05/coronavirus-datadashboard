@@ -168,7 +168,7 @@ function piechart(dateInput, attribute){
             // Paths
             var path = d3.arc()
                         .outerRadius(width/2 - 10)
-                        .innerRadius(110)
+                        .innerRadius(100)
         
         
         

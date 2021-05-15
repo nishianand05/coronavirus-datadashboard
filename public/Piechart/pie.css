@@ -1,3 +1,7 @@
+#pieTitle {
+	margin: 40px;
+}
+
 /* -------------------------------- User attribute styles -------------------------------- */
 
 #userAttr {
@@ -120,4 +124,8 @@ svg{
 	
 }
 
-
+@media(max-width: 420px){
+	#pieTitle{
+		margin-bottom: 0;
+	}
+}
