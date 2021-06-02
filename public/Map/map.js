@@ -80,11 +80,18 @@ function map(dateInput, attribute){
                      .projection(projection);
 
         
-
+		
         // Drawing map
         var svg = d3.select('#map')
                     .attr('width', width)
                     .attr('height', height)
+					.call(d3.zoom()
+						    .extent([[0, 0], [width, height]])
+						    .scaleExtent([1, 8])
+						    .on("zoom", function(){
+						svg.attr("transform", d3.event.transform)
+					}))
+		
                     .selectAll('.country')
                     .data(geoData)
                     .enter()

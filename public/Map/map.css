@@ -86,6 +86,10 @@ form ul {
 
 /* -------------------------------- Map div -------------------------------- */
 
+#mapTitle {
+	margin: 40px;
+}
+
 #MapDiv{
   background-color: #141a1d;
   border-radius: 15px;
@@ -93,6 +97,10 @@ form ul {
   margin: 2%;
   margin-top: 0;
   width: 65%;
+}
+
+#MapDiv:hover {
+	cursor: all-scroll;
 }
 
 /* SVG */
