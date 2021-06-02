@@ -80,18 +80,21 @@ function map(dateInput, attribute){
                      .projection(projection);
 
         
+		const zoom = d3.zoom()
+						.scaleExtent([1, 8])
+						.on("zoom", zoomed)
+		
+		function zoomed() {
+			d3.select('#map')
+				.selectAll('path')
+				.attr('transform', d3.event.transform);
+		}
 		
         // Drawing map
         var svg = d3.select('#map')
                     .attr('width', width)
                     .attr('height', height)
-					.call(d3.zoom()
-						    .extent([[0, 0], [width, height]])
-						    .scaleExtent([1, 8])
-						    .on("zoom", function(){
-						svg.attr("transform", d3.event.transform)
-					}))
-		
+					.call(zoom)
                     .selectAll('.country')
                     .data(geoData)
                     .enter()
@@ -126,14 +129,9 @@ function map(dateInput, attribute){
             // Color range
             var  colorRanges = {		
 				deaths: ["#400000", "#d03711"],
-
-                cases: ['#421600','#fcdf03'],                
-				// cases: ['#591d00','#f7b401'],
-                // activeCases: ['#420d16', '#ff6c2b'],                
+                cases: ['#421600','#fcdf03'],                             
 				activeCases: ['#641220', '#d65a24'],
                 recovered: ['#449646', '#024201'],                
-				// recovered: ['#73a942', '#004b23'],
-
             };
             
             
@@ -142,27 +140,21 @@ function map(dateInput, attribute){
                             .domain([0, d3.max(coroArr, d => d[attribute])])
                             .range(colorRanges[attribute]);
 
-            
-            // Update map
-            d3.selectAll('.country')
-                .transition()
-                .duration(750)
+			
+			// Update map
+			d3.selectAll('.country')
+				.transition()
+				.duration(750)
 				.on('end', function(d,i,nodes){
 							if(i === nodes.length - 1){
 						  $("#refresh").text("Refresh")	  
 						}})
-                .ease(d3.easeBackIn)
-                .attr('fill', d => {
-                    var data = d.properties[attribute];
-                    return data ? scale(data) : '#ccc';
-                })
+				.ease(d3.easeBackIn)
+				.attr('fill', d => {
+					var data = d.properties[attribute];
+					return data ? scale(data) : '#ccc';
+				})
 
-                // .on('mousemove', showTooltip)
-                // .on('touchstart', showTooltip)
-                // .on('mouseout', hideTooltip)
-                // .on('touchend', hideTooltip);
-
-        
         }
         
         // Tooltip functions
