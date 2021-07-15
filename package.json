@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	  "start": "node index.js"
+    "start": "node index.js"
   },
   "author": "Nishi Anand",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "pwa-asset-generator": "^4.3.0"
   }
+	"homepage": "/"
 }

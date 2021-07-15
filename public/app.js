@@ -1,7 +1,3 @@
-if('serviceWorker' in navigator){
-	navigator.serviceWorker.register('/sw.js');
-}
-
 // ----------------------------------------- Loading page ----------------------------------------- 
 
 function loadpage(){
