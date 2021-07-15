@@ -1,7 +1,7 @@
 {
   "name": "coronadashboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project uses D3.js to visualize coronavirus data. The data dashboard consists of a **Map, Bar chart, Pie chart, and a Scatterplot** based on mainly 4 attributes - **Number of Cases, Active cases, Deaths and Recovered patients**. The dashboard allows user to input dates and choose the attribute they want.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,15 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "nodemon": "^2.0.7",
-    "pwa-asset-generator": "^4.3.0"
-  }
-	"homepage": "/"
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishianand05/coronavirus-datadashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nishianand05/coronavirus-datadashboard/issues"
+  },
+  "homepage": "https://github.com/nishianand05/coronavirus-datadashboard#readme"
 }
