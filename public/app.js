@@ -42,7 +42,7 @@ if($(window).width() < 390){
 $("#crossbtn").click(function(){
     $(".alert").removeClass("show");
     $(".alert").addClass("hide");
-    window.location.reload();
+    window.location.replace("/info");
 })
 
 // ----------------------------------------- Date ----------------------------------------- 

@@ -201,7 +201,6 @@ nav i {
     position: fixed;
     text-align: center;
     background-color: rgb(168, 0, 0);
-    font-size: 2em;
     padding: 40px;
     margin: 0;
     top: 50%;
@@ -210,17 +209,30 @@ nav i {
     transform: translate(-50%, -50%);
     z-index: 2;
     box-shadow: 0px 0px 8000px 8000px rgba(0,0,0,0.85);
+	border-radius: 10px;
   }
+
+.alert i {
+	font-size: 2.5em;
+}
   
-  .alert p {
+  .alert #alertHeading {
+	font-size: 2em;
     margin: 0;
     margin-top: 30px;
+  }
+
+  .alert #alertText {
+	font-size: 1em;
+    margin: 0;
+    margin-top: 15px;
   }
   
   
   /* Cross button */
   
   #crossbtn {
+	font-size: 0.8em;
     background-color: rgb(168, 0, 0);
     position: absolute;
     top: 0;
